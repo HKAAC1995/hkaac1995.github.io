@@ -14,7 +14,7 @@ function read(){return new Promise((resolve,reject)=>{const q=db.transaction('da
 function write(next){return new Promise((resolve,reject)=>{const tx=db.transaction('data','readwrite');tx.objectStore('data').put(next,'state');tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||new Error('저장 실패'))})}
 function navigate(v){path.push(v);manage=false;render()}
 function matchingSubject(s){return s.stage===path[0]&&(path[0]!=='초등'||s.grade===path[1])}
-function subjects(){const custom=state.subjects.filter(matchingSubject);const low=path[0]==='초등'&&Number(path[1])<=2;const names=path[0]==='초등'?(low?['국어','수학','통합']:['국어','사회','수학','과학','음악','미술','체육']):path[0]==='중등'?['국어','수학','사회','과학','음악','미술','체육','진로와직업']:[];return[...new Set([...names,...custom.map(s=>s.name)])]}
+function subjects(){const custom=state.subjects.filter(matchingSubject);const low=path[0]==='초등'&&Number(path[1])<=2;const names=path[0]==='초등'?(low?['국어','수학','통합']:['국어','사회','수학','과학','음악','미술','체육']):['중등','고등'].includes(path[0])?['국어','수학','사회','과학','음악','미술','체육','진로와직업']:[];return[...new Set([...names,...custom.map(s=>s.name)])]}
 function currentUnits(){return state.units.filter(u=>u.stage===path[0]&&(path[0]!=='초등'||u.grade===path[1])&&u.subject===path[2])}
 function currentCards(){return state.cards.filter(c=>c.unit===path[3])}
 function tile(label,detail,fn){const b=btn('',fn,'tile');b.append(element('strong',label));if(detail)b.append(element('small',detail));return b}
@@ -113,16 +113,16 @@ const oldHome=$('#home').onclick;$('#home').onclick=()=>{personalView=false;oldH
 
 let middleStep=null;
 const middleUnitsBase=currentUnits;
-currentUnits=function(){const units=middleUnitsBase();return path[0]==='중등'&&middleStep?units.filter(u=>middleStep===2?u.grade===2:u.grade!==2):units;};
+currentUnits=function(){const units=middleUnitsBase();return ['중등','고등'].includes(path[0])&&middleStep?units.filter(u=>middleStep===2?u.grade===2:u.grade!==2):units;};
 const middleRenderBase=render;
-render=function(){middleRenderBase();if(personalView||path[0]!=='중등'||path.length<3)return;
+render=function(){middleRenderBase();if(personalView||!['중등','고등'].includes(path[0])||path.length<3)return;
 if(path.length===3&&!middleStep){$('#title').textContent=path[2]+' · 단계 선택';$('#intro').textContent='수업할 단계를 선택해 주세요.';$('#tools').replaceChildren();const c=$('#content');c.replaceChildren();const grid=element('div',undefined,'grid');c.append(grid);for(const n of [1,2])grid.append(tile(n+'단계','단원 보기',()=>{middleStep=n;path[1]=n;render();}));}
 else if(middleStep){if(path.length===3)$('#title').textContent=path[2]+' · '+middleStep+'단계 · 단원';const nav=$('#crumb');const buttons=nav.querySelectorAll('button');if(buttons[2])buttons[2].onclick=()=>{path=path.slice(0,3);middleStep=null;render();};const step=btn(middleStep+'단계',()=>{path=path.slice(0,3);render();});if(path.length===4&&buttons[3]){buttons[3].before(element('span','›'),step);}else nav.append(element('span','›'),step);}
 };
 const middleNavigateBase=navigate;
-navigate=function(v){if(path[0]==='중등'&&path.length===2)middleStep=null;middleNavigateBase(v);};
+navigate=function(v){if(['중등','고등'].includes(path[0])&&path.length===2)middleStep=null;middleNavigateBase(v);};
 const middleBackBase=$('#back').onclick;
-$('#back').onclick=()=>{if(!personalView&&path[0]==='중등'&&path.length===3&&middleStep){middleStep=null;render();return;}middleBackBase();};
+$('#back').onclick=()=>{if(!personalView&&['중등','고등'].includes(path[0])&&path.length===3&&middleStep){middleStep=null;render();return;}middleBackBase();};
 
 (async()=>{try{db=await openDB();commonData=await readKey('common')||initial();validateBackup(commonData);localDraft=await readKey('draft')||null;if(localDraft)validateBackup(localDraft);state=commonData;await getPersonal();render();await syncCommon();setupOffline()}catch(e){notify('자료 저장소를 열지 못했습니다. Edge 또는 Chrome 일반 창에서 열어 주세요. '+e.message,true)}})();
 </script></body></html>
