@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='school-aac-shell-v4-0-6';
+const CACHE='school-aac-shell-v4-0-7';
 const SHELL=['./','./index.html','./cloud-config.js','./manifest.webmanifest','./AAC.ico','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('school-aac-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
