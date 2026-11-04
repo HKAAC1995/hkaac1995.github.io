@@ -1,6 +1,6 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>의사소통</title><link rel="icon" href="AAC.ico"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#2c6348"><link rel="apple-touch-icon" href="icon-192.png"><style>
 :root{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;color:#243d31;background:#f4f7f2;font-size:16px}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer;background:white;color:inherit;border:1px solid #d4dfd5;border-radius:12px;padding:12px 18px;min-height:46px}button:hover{border-color:#2b6749}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #dd9a22;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.primary{background:#2c6348;color:white;border-color:#2c6348}.danger{color:#a52a2a}header{background:white;border-bottom:1px solid #dce5dc;padding:22px 4%;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.brand{font-size:24px;font-weight:bold}.sub{font-size:13px;color:#617567}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}main{max-width:1150px;margin:auto;padding:26px 28px}nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:26px}nav button{background:transparent;border:0;padding:6px 10px;min-height:40px}h1{font-size:28px;margin:0 0 8px}h2{font-size:21px}p{color:#5b7162;line-height:1.7}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:18px;margin-top:24px}.tile{display:flex;flex-direction:column;gap:12px;justify-content:center;text-align:left;min-height:150px;padding:26px}.tile strong{font-size:25px;font-weight:500}.tile small{color:#647b69}.toolbar{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:22px 0}.empty{border:1px dashed #b9cbbb;border-radius:14px;padding:30px;margin-top:24px;background:#fff}.panel{background:white;padding:22px;border-radius:14px;border:1px solid #d8e2d8;margin:20px 0}.vocab{min-height:200px;align-items:center;text-align:center;position:relative;padding:12px}.vocab img{width:100%;height:150px;object-fit:contain}.vocab strong{font-size:23px}.vocab[aria-pressed=true]{outline:4px solid #368158;outline-offset:1px}.wordonly{font-size:30px;min-height:135px;display:flex;align-items:center;justify-content:center}.response{padding:18px;background:#e4eee3;border-radius:12px;font-size:25px;min-height:74px;margin-top:24px}.status{max-width:1150px;margin:10px auto;padding:0 28px;color:#5e7163;font-size:14px}.alert{color:#a32f23}footer{padding:24px 28px;text-align:center;color:#667669;font-size:13px}dialog{border:1px solid #cbd9cd;border-radius:18px;padding:24px;width:min(650px,94vw);max-height:90vh;overflow:auto;color:inherit}dialog::backdrop{background:#203c3066}label{display:block;margin:15px 0 7px}input,select{padding:10px;border:1px solid #becdc0;border-radius:8px;max-width:100%;width:100%;background:white;color:#243d31}input[type=checkbox]{width:auto}input[type=file]{padding:10px}form h2{margin-top:0}.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px;flex-wrap:wrap}.printsheet{display:flex;flex-wrap:wrap;align-content:flex-start;gap:3mm;background:white;padding:12mm;width:210mm;max-width:100%;margin:auto}.printcard{border:.3mm solid #666;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;break-inside:avoid;background:white;color:black}.printcard img{width:100%;height:78%;object-fit:contain}.printcard span{padding:1mm;text-align:center;overflow-wrap:anywhere;font-size:14pt}.printcard.nolabel img{height:100%}#print-area{display:none}.previewwrap{overflow:auto;padding:12px;background:#e6eae5}.help{font-size:14px}.chips{display:flex;gap:8px;flex-wrap:wrap}.chips span{background:#edf3ed;padding:6px 10px;border-radius:8px} [hidden]{display:none!important}@media(max-width:600px){main{padding:20px 16px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tile{padding:18px;min-height:125px}.tile strong{font-size:22px}.vocab img{height:115px}.vocab strong{font-size:20px}.brand{font-size:22px}header{padding:18px 16px}.printsheet{max-width:none}}@page{size:A4 portrait;margin:12mm}@media print{body>*{display:none!important}#print-area{display:block!important}#print-area .printsheet{padding:0;width:186mm;max-width:none;gap:3mm}#print-area h2{color:black;margin:0 0 5mm;font-size:16pt} .printcard{box-shadow:none} }
-</style></head><body><header><div><div class="brand">▣ 의사소통</div><div class="sub">교과 수업을 함께하는 의사소통북 · 학교 공통자료 4.2</div></div><div class="row"><button id="back" type="button" disabled>← 뒤로가기</button><button id="home">처음으로</button><button id="basket">인쇄함 <b>0</b></button><button id="sync">최신 자료 받기</button><button id="teacher">자료 제작</button><button id="install" hidden>앱 설치</button><button id="refresh" hidden>앱 업데이트</button><button id="data">공유·사용안내</button></div></header><div class="status" id="status" role="status" aria-live="polite">자료를 불러오는 중입니다.</div><main><nav aria-label="현재 위치" id="crumb"></nav><h1 id="title"></h1><p id="intro"></p><div id="tools" class="toolbar"></div><div id="content"></div></main><footer>GitHub 학교 공통자료 · 인터넷 연결 시 최신 자료 확인 · 오프라인에서는 마지막 저장 자료 사용</footer><dialog id="dialog"></dialog><div id="print-area"></div>
+.school-shared-tile{background:#e4eee3;border-color:#8eb59b}.school-shared-tile strong{font-size:23px;overflow-wrap:anywhere}</style></head><body><header><div><div class="brand">▣ 의사소통</div><div class="sub">교과 수업을 함께하는 의사소통북 · 학교 공통자료 4.6</div></div><div class="row"><button id="back" type="button" disabled>← 뒤로가기</button><button id="home">처음으로</button><button id="basket">인쇄함 <b>0</b></button><button id="sync">최신 자료 받기</button><button id="teacher">자료 제작</button><button id="install" hidden>앱 설치</button><button id="refresh" hidden>앱 업데이트</button><button id="data">공유·사용안내</button></div></header><div class="status" id="status" role="status" aria-live="polite">자료를 불러오는 중입니다.</div><main><nav aria-label="현재 위치" id="crumb"></nav><h1 id="title"></h1><p id="intro"></p><div id="tools" class="toolbar"></div><div id="content"></div></main><footer>GitHub 학교 공통자료 · 인터넷 연결 시 최신 자료 확인 · 오프라인에서는 마지막 저장 자료 사용</footer><dialog id="dialog"></dialog><div id="print-area"></div>
 <script src="./cloud-config.js"></script><script>
 'use strict';
 const $=s=>document.querySelector(s);const stages=[['초등',6],['중등',3],['고등',3],['전공과',2]];let db,state,path=[],mode='tablet',manage=false,selected=new Set(),teacher=false,commonData,localDraft=null,installPrompt=null,syncing=false;
@@ -61,7 +61,7 @@ function setSession(data){cloudSession={access_token:data.access_token,refresh_t
 function recordMap(pack){const m=new Map();for(const kind of ['subjects','units','cards'])for(const value of pack[kind]){const key=kind==='subjects'?JSON.stringify([value.stage,value.grade,value.name]):value.id;m.set(kind+':'+key,{kind,key,value});}return m;}
 function changesBetween(before,after){const a=recordMap(before),b=recordMap(after),changes=[];for(const key of new Set([...a.keys(),...b.keys()])){const old=a.get(key),next=b.get(key);if(JSON.stringify(old?.value)!==JSON.stringify(next?.value))changes.push({kind:(next||old).kind,key:(next||old).key,before:old?.value||null,after:next?.value||null});}return changes;}
 async function readCloud(){return validateBackup(await cloudRequest('/rest/v1/rpc/aac_snapshot',{}));}
-async function syncCommon(){if(syncing)return;syncing=true;$('#sync').disabled=true;try{let pack;if(cloudReady())pack=await readCloud();else{const r=await fetch('./common.json?t='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error('자료 응답 오류');pack=validateBackup(await r.json());}await writeKey('common',pack);commonData=pack;if(!teacher){state=pack;if(path.length===4&&!state.units.some(u=>u.id===path[3]))path=path.slice(0,3);selected=new Set([...selected].filter(id=>(pack.cards.some(c=>c.id===id)||(personalBook?.cards||[]).some(c=>c.id===id))));render();}notify((cloudReady()?'공동 저장소 확인 완료':'공동 업로드 연결 전 · 기존 자료')+' · '+pack.cards.length+'장'+(teacher?' · 내 제작 작업은 유지됩니다.':''));}catch(e){notify('최신 자료 확인 실패 · 마지막 저장 자료를 사용합니다. '+e.message,true);}finally{syncing=false;$('#sync').disabled=false;}}
+async function syncCommon(){if(syncing)return;syncing=true;$('#sync').disabled=true;try{let pack;if(cloudReady())pack=await readCloud();else{const r=await fetch('./common.json?t='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error('자료 응답 오류');pack=validateBackup(await r.json());}await writeKey('common',pack);commonData=pack;if(!teacher){state=pack;if(path.length===4&&path[3]!==SCHOOL_SHARED_ID&&!state.units.some(u=>u.id===path[3]))path=path.slice(0,3);selected=new Set([...selected].filter(id=>(pack.cards.some(c=>c.id===id)||(personalBook?.cards||[]).some(c=>c.id===id))));render();}notify((cloudReady()?'공동 저장소 확인 완료':'공동 업로드 연결 전 · 기존 자료')+' · '+pack.cards.length+'장'+(teacher?' · 내 제작 작업은 유지됩니다.':''));}catch(e){notify('최신 자료 확인 실패 · 마지막 저장 자료를 사용합니다. '+e.message,true);}finally{syncing=false;$('#sync').disabled=false;}}
 async function toggleTeacher(){if(teacher){teacher=false;state=commonData;path=[];render();return;}if(!cloudReady())throw Error('공동 업로드 연결 전입니다. 담당자의 최초 설정이 필요합니다.');if(!cloudSession){formDialog('관리자 로그인',f=>{field(f,'이메일','email','','email');const p=field(f,'비밀번호','password','','password');p.autocomplete='current-password';},async fd=>{setSession(await cloudRequest('/auth/v1/token?grant_type=password',{email:String(fd.get('email')).trim(),password:String(fd.get('password'))}));try{if(!await cloudRequest('/rest/v1/rpc/aac_is_admin',{},true))throw Error('지정된 관리자 계정이 아닙니다.');await enterEditor();}catch(e){cloudSession=null;throw e;}});return;}await enterEditor();}
 async function enterEditor(){const fresh=await readCloud();commonData=fresh;const pending=await readKey('shared-pending:'+cloudSession.user_id);if(pending){validateBackup(pending.base);validateBackup(pending.draft);draftBase=pending.base;state=pending.draft;}else{draftBase=structuredClone(fresh);state=structuredClone(fresh);}teacher=true;path=[];selected.clear();render();notify('관리자 제작 모드 · 저장 후 ‘공동 게시·백업 → 전체에 공유하기’를 누르세요.');}
 async function commit(next){if(!teacher||!cloudSession)throw Error('관리자 로그인이 필요합니다.');validateBackup(next);await writeKey('shared-pending:'+cloudSession.user_id,{base:draftBase,draft:next});state=next;render();notify('내 작업을 이 기기에 저장했습니다. 전체에 공유하기를 누르면 게시됩니다.');}
@@ -123,6 +123,58 @@ const middleNavigateBase=navigate;
 navigate=function(v){if(['중등','고등'].includes(path[0])&&path.length===2)middleStep=null;middleNavigateBase(v);};
 const middleBackBase=$('#back').onclick;
 $('#back').onclick=()=>{if(!personalView&&['중등','고등'].includes(path[0])&&path.length===3&&middleStep){middleStep=null;render();return;}middleBackBase();};
+
+
+// A stable shared collection uses the existing, server-authorized unit records.
+// Display name is independent of its ID, so renaming keeps every card attached.
+const SCHOOL_SHARED_ID='school-wide-communication-v1';
+const SCHOOL_SHARED_SUBJECT='__school_shared__';
+function isSchoolShared(){return path[3]===SCHOOL_SHARED_ID;}
+function sharedUnit(){return state.units.find(u=>u.id===SCHOOL_SHARED_ID);}
+function sharedName(){return sharedUnit()?.name||'우리학교 의사소통';}
+function sharedRecord(name=sharedName()){return {id:SCHOOL_SHARED_ID,stage:'전공과',grade:1,subject:SCHOOL_SHARED_SUBJECT,name};}
+function openSchoolShared(){personalView=false;middleStep=null;manage=false;path=['전공과',1,SCHOOL_SHARED_SUBJECT,SCHOOL_SHARED_ID];render();}
+function renameSchoolShared(){
+ if(!teacher||!cloudSession)throw Error('관리자 로그인이 필요합니다.');
+ formDialog('우리학교 의사소통 · 버튼 이름 수정',f=>{
+  const input=field(f,'메인화면에 표시할 버튼 이름','name',sharedName());input.maxLength=30;
+  f.append(element('p','저장 후 전체에 공유하기를 누르면 모든 교사에게 적용됩니다. 등록한 카드는 그대로 유지됩니다.','help'));
+ },async fd=>{const name=String(fd.get('name')).trim();if(!name||name.length>30)throw Error('버튼 이름을 1~30자로 입력해 주세요.');
+ const units=sharedUnit()?state.units.map(u=>u.id===SCHOOL_SHARED_ID?{...u,name}:u):[...state.units,sharedRecord(name)];
+ await commit({...state,units});});
+}
+const sharedAddCardsBase=addCards;
+addCards=async function(){
+ if(isSchoolShared()){
+  if(!teacher||!cloudSession)throw Error('관리자 로그인이 필요합니다.');
+  if(!sharedUnit())await commit({...state,units:[...state.units,sharedRecord()]});
+ }
+ sharedAddCardsBase();
+ if(isSchoolShared())$('#dialog h2').textContent=sharedName()+' · 카드 추가';
+};
+const sharedUnitsBase=currentUnits;
+currentUnits=function(){return sharedUnitsBase().filter(u=>u.id!==SCHOOL_SHARED_ID);};
+const sharedRenderBase=render;
+render=function(){
+ sharedRenderBase();if(personalView)return;
+ if(path.length===0){
+  const b=tile(sharedName(),'학교 전체 공통 카드',openSchoolShared);b.classList.add('school-shared-tile');$('#content .grid').append(b);
+  if(teacher)$('#tools').append(btn('우리학교 의사소통 버튼 이름 수정',renameSchoolShared));
+ }
+ if(!isSchoolShared())return;
+ $('#title').textContent=sharedName();
+ $('#crumb').replaceChildren(btn('처음',()=>{path=[];manage=false;render();}),element('span','›'),btn(sharedName(),()=>{manage=false;render();}));
+ if(!manage)$('#intro').textContent=mode==='print'?'학교 공통 카드 중 필요한 카드를 눌러 인쇄함에 담으세요.':'학교 어디에서나 함께 사용하는 카드입니다. 카드를 누르면 선택한 말이 크게 나타납니다.';
+ for(const b of $('#tools').querySelectorAll('button')){
+  if(b.textContent==='단원 이름 수정'){b.textContent='버튼 이름 수정';b.onclick=()=>{try{renameSchoolShared();}catch(e){notify(e.message,true);}};}
+  if(b.textContent==='이 단원 모두 담기')b.textContent='공통 카드 모두 담기';
+  if(b.textContent==='이 단원 나만의 AAC로 복사')b.textContent='공통 카드 나만의 AAC로 복사';
+ }
+ if(teacher)$('#tools').append(btn('전체에 공유하기',publishFile,'primary'));
+ const empty=$('#content .empty');if(empty)empty.textContent=teacher?'학교 전체가 함께 사용할 카드를 추가해 주세요. 저장한 뒤 전체에 공유하기를 누르면 게시됩니다.':'아직 게시된 학교 공통 카드가 없습니다. 관리자가 카드를 게시하면 여기에 표시됩니다.';
+};
+const sharedBackBase=$('#back').onclick;
+$('#back').onclick=()=>{if(!personalView&&isSchoolShared()){path=[];manage=false;render();}else sharedBackBase();};
 
 (async()=>{try{db=await openDB();commonData=await readKey('common')||initial();validateBackup(commonData);localDraft=await readKey('draft')||null;if(localDraft)validateBackup(localDraft);state=commonData;await getPersonal();render();await syncCommon();setupOffline()}catch(e){notify('자료 저장소를 열지 못했습니다. Edge 또는 Chrome 일반 창에서 열어 주세요. '+e.message,true)}})();
 </script></body></html>
